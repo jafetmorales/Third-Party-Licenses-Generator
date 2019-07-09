@@ -36,7 +36,7 @@ var manuallyCopiedFolder = 'licenses/manuallyCopied';
 /**
  * Greetings text
  */
-var greetings = "This software was gratefully developed using these third-parties softwares:";
+var greetings = "This page displays all relevant licenses for third party software that we use to deliver this application to you.<br>We are grateful to developers of these third party tools:";
 
 /**
  * Sometimes, we just want build a 3PLG File with production dependencies or
