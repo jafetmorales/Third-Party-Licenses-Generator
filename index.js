@@ -149,7 +149,10 @@ var main = function() {
     console.log('\n\n===>>> Starting...\n\n');
 
     console.log('===>>> Clearing licenses html file...\n\n');
-    fs.writeFile(TPLGFile, "");
+    fs.writeFile(TPLGFile, "", function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
 
 
     var dependencies = getProjectDependencies();
@@ -157,7 +160,10 @@ var main = function() {
 
     // var header = "<html><body>"
     // fs.appendFile(TPLGFile, header);
-    fs.appendFile(TPLGFile, '<pre>'+greetings+'</pre><br />');
+    fs.appendFile(TPLGFile, '<pre>'+greetings+'</pre><br />', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
 
     dependencies.forEach((dependency_name) => {
 
@@ -187,14 +193,20 @@ var main = function() {
             string += '<pre>' + licText + '</pre><br />';
             // string += '<iframe src="https://www.w3schools.com"></iframe><br />';
             // string += '<iframe src="' + dependency.uri + '"></iframe><br />';
-            fs.appendFile(TPLGFile, '<li style="list-style: none;">');
+            fs.appendFile(TPLGFile, '<li style="list-style: none;">', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
             fs.appendFile(TPLGFile, string, function(err) {
                 if (err) console.error('ERR', err);
                 //jafet replaced with line below it
                 // console.log('Written: ' + dependency.name + '@' + dependency.version);
                 // console.log('Written: ' + dependency.name);
             });
-            fs.appendFile(TPLGFile, '</li>');
+            fs.appendFile(TPLGFile, '</li>', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
 
 
 
